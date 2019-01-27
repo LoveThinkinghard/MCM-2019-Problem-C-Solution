@@ -3,6 +3,9 @@ We are working on MCM 2019 [Problem](https://www.comap.com/undergraduate/contest
 
 Because it's hard to use gifs in a pdf paper, we would like to share them with you guys. Just take what you want.
 
+## Notice
+We provide no thinking, and no figure can be used in your paper.
+
 ## Acknowledgement
 The latitude and longitude data of 461 counties come from [SimpleMaps.com](https://simplemaps.com/data/us-cities), which is for free. Great Thanks!
 
