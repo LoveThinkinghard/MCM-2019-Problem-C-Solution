@@ -2,7 +2,7 @@
 
 We participated in the MCM 2019, and chose the [Problem](https://www.comap.com/undergraduate/contests/mcm/contests/2019/problems/) C. This is our solution.
 
-Also, we made some beautiful gifs to visualize the spread of opioids. You can download them and their code here.
+Also, we made some beautiful gifs to visualize the spread of opioids. You can download them and their code in this repo.
 
 ## Acknowledgement
 
@@ -83,3 +83,11 @@ Also, when we try to inverse the model to predict before, we failed again, some 
 We don't use any activation function, because we want to make inverse to predict before. Though we know it will be more reasonable if we put a relu at the final output, because the number of drug use is all positive.
 
 Why we don't use more complex network like CNN, or even LSTM? It's also for making inverse.
+
+## Usage
+
+[solution](https://github.com/LoveThinkinghard/MCM-2019-Problem-C-Solution/tree/master/solution) folder include three code files:
+
+>[plot_gif.py](https://github.com/LoveThinkinghard/MCM-2019-Problem-C-Solution/blob/master/solution/plot_gif.py) generate spread maps in gif format  
+[model1.py](https://github.com/LoveThinkinghard/MCM-2019-Problem-C-Solution/blob/master/solution/model1.py) the first model  
+[model2.py](https://github.com/LoveThinkinghard/MCM-2019-Problem-C-Solution/blob/master/solution/model2.py) the second model  
