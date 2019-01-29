@@ -1,4 +1,4 @@
-# MCM-2019-Problem-C-Solution
+# MCM 2019 Problem C Solution
 
 We participated in the MCM 2019, and chose the [Problem](https://www.comap.com/undergraduate/contests/mcm/contests/2019/problems/) C. This is our solution.
 
