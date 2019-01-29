@@ -12,11 +12,13 @@ Thanks, my teammates, without whom I have no way to finish this.
 
 ## Examples of spread map gifs
 
+Notice that it is not our model predictions, it's just a visualization of the given history data.
+
 ### All drugs
 
 (which I mean `TotalDrugReportsCounty` in the [problem](https://www.comap.com/undergraduate/contests/mcm/contests/2019/problems/) file `MCM_NFLIS_Data.xlsx`)
 
-![All drugs](https://github.com/LoveThinkinghard/MCM-2019-Problem-C-drug-spread-maps/blob/master/spread%20maps/All%20Drugs%20map.gif)
+![All drugs](https://github.com/LoveThinkinghard/MCM-2019-Problem-C-drug-spread-maps/blob/master/solution/gifs/All%20Drugs%20map.gif)
 
 ### Heroin
 
