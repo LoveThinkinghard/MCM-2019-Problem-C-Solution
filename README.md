@@ -44,20 +44,21 @@ Of course the `transfer-matrix` is not just a matrix, there are more details.
 
 ### Details of first model
 
-`transfer-matrix` of our first model, which uesd to solve the first part, consist of two part: `distance-matrix` and `correction-matrix`. And you might think of it that our `correction-matrix` is actually a fully connected network of 461 inputs and 461 outputs, which is trainable while our `distance-matrix` is designed by hand. Figure below illustrates this.
+`transfer-matrix` of our first model, which uesd to solve the first part, consists of two parts: `distance-matrix` and `correction-matrix`. And you might think of it that our `correction-matrix` is actually a fully connected network of 461 inputs and 461 outputs, which is trainable, while our `distance-matrix` is designed by hand. Figure below illustrates this.
 
 ![model1_detail](https://github.com/LoveThinkinghard/MCM-2019-Problem-C-drug-spread-maps/blob/master/pics/model1_detial.jpg)
 
-`distance-matrix` is designed to represent to distance of two counties. For example, if two counties are close to each other, we think that one county's drugs might be more likely to spread to anthor, which is a natural thinking. And about how exactly we design this `distance-matrix`, the answer would be: just try.
+`distance-matrix` is designed to represent to distance of two counties. For example, if two counties are close to each other, we think that one county's drugs is more likely to spread to anthor, which is a natural thinking. And about how exactly we design this `distance-matrix`, the answer would be: just try.
 
-`correction-matrix` is designed to correct the `distance-matrix` and represent some information we don't consider. But actually if you say: `distance-matrix` is designed to accelerate the learning of network, I will also agree with that.
+`correction-matrix` is designed to correct the `distance-matrix` and represents some information we don't consider. But actually, if you say: `distance-matrix` is designed to accelerate the learning of network, I will also agree with that.
 
 ### Details of second model
 
-Based on the first model, we add a new part, called `economic-matrix`, which represent the influence of socio-economic parameters, and mainly to one county itself.
-So the `economic-matrix` is diagonal matrix. The Value is determinded by one county's socio-economic data. And how to get each parameter's weight? The solution is another network. And to explain how each parameter influence the `economic-matrix`, we choose fully connected network again, because it's linear and the weights of network can represent the weights of socio-economic parameters. So the structure would be like this:
+Based on the first model, we add a new part, called `economic-matrix`, which represents the influence of socio-economic parameters, and mainly to one county itself. So the `economic-matrix` is diagonal matrix, and its value is determinded by one county's socio-economic data. But how to get each parameter's weight? You don't know each parameter's effect. The solution is another network. And to explain how each parameter influence the `economic-matrix`, we choose fully connected network again, because it's linear and the weights of network can represent the weights of socio-economic parameters. So the structure would be like this:
 
 ![model2_detail](https://github.com/LoveThinkinghard/MCM-2019-Problem-C-drug-spread-maps/blob/master/pics/model2_detial.jpg)
+
+A shared layer has been used to ensure every socio-economic network has the same weights.
 
 ### Part of results
 
@@ -75,14 +76,13 @@ So the `economic-matrix` is diagonal matrix. The Value is determinded by one cou
 
 #### Summary of results
 
-This first model performs not bad, as you can see. But not on every sample. But the second model is not that good, the loss is very high, though decreased a lot. That might because we make some mistakes when pre-process the socio-economic data. We thought the tags (like 'HC01_VC03') are the same in each file, however, we are wrong. when we find this mistake it's very close to the deadline. So we leave that problem. But we do believe that the second model would be a good model if fed well.
-Also, when we try to inverse the model to predict before, we failed again, some bad results come out, and it's not solved now.
+This first model performs not bad, as you can see. But not on every sample. And the second model is not that good, the loss is very high, though decreased a lot. That might because we made some mistakes when pre-process the socio-economic data. We thought the tags (like 'HC01_VC03') are the same in each socio-economic data file, however, we are wrong. When we found this mistake, it's very close to the deadline, so we left it. But we do believe that the second model would be a good model if fed well. Also, when we try to inverse the model to predict before, we failed again, some bad results come out, and it's not solved now.
 
 ### Small details about our model
 
-We don't use any activation function, because we want to make inverse to predict before. Though we know it will be more reasonable if we put a relu at the final output, because the number of drug use is all positive.
+We don't use any activation function, because we want to make a inverse to predict before. Though we know it will be more reasonable if we put a relu before the final output, because the number of drug use is all positive.
 
-Why we don't use more complex network like CNN, or even LSTM? It's also for making inverse.
+Why we don't use more complex network like CNN, or even LSTM? It's also for making convenient inverse.
 
 ## Usage
 
